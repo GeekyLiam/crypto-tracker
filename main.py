@@ -104,7 +104,8 @@ def menu():
             coin_data = coin_price(coin_cur[0], coin_cur[1])
 
             if coin_data["symbol"] == "BTCUSDT":
-                print(f"The current value of {coin_amount} BTC is ${float(coin_data['price'])*coin_amount:.2f}.")
+                value = coin_data['price']*coin_amount
+                print(f"The current value of {coin_amount} BTC is ${value:.2f}.")
             elif coin_data["symbol"] == "BTCGBP":
                 print(f"BTC/GBP price is £{float(coin_data['price']):.2f}.")
             elif coin_data["symbol"] == "ETHUSDT":
