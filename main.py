@@ -1,6 +1,7 @@
 import json
 import requests
 import time
+import os
 
 def coin_cur_selection():
     """
@@ -60,6 +61,7 @@ def menu():
     menu_loop = True
 
     while menu_loop:
+        os.system('cls')
         print("1. View Coin Price")
         print("2. Exit")
 
