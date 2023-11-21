@@ -43,7 +43,8 @@ def coin_cur_selection():
     return coin_cur
 
 def coin_price(coin, currency):
-    pass
+    url = f"https://api.binance.com/api/v3/ticker/price?symbol={coin}{currency}"
+    print(url)
 
 def menu():
     print("Welcome to CryptoTracker!")
