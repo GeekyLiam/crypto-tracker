@@ -14,9 +14,11 @@ def coin_cur_selection():
         coin = input("Enter the coin ticker: \n").upper()
         if coin == "BTC":
             print("Bitcoin selected.")
+            time.sleep(0.2)
             coin_loop = False
         elif coin == "ETH":
             print("Ethereum selected.")
+            time.sleep(0.2)
             coin_loop = False
         else:
             print("Coin not recognized. Please retry.")
@@ -28,9 +30,11 @@ def coin_cur_selection():
         if currency == "USD":
             currency = "USDT"
             print("USD selected.")
+            time.sleep(0.2)
             cur_loop = False
         elif currency == "GBP":
             print("GBP selected.")
+            time.sleep(0.2)
             cur_loop = False
         else:
             print("Currency not recognized. Please retry.")
