@@ -1,4 +1,11 @@
+import json
+import requests
 
-print("Hello, World!")
-name = input("What is your name? ")
-print("Hello, " + name + "! Welcome to the world of programming!")
+def menu():
+    print("Welcome to CryptoTracker!")
+
+def main():
+    menu()
+
+if __name__ == '__main__':
+    main()
