@@ -77,6 +77,8 @@ def menu():
             print("Clearing terminal...")
             time.sleep(1)
             os.system('cls')
+            print("Welcome to CryptoTracker!")
+            print("Please choose an option from the menu:")
 
         elif choice == "q" or choice == "Q":
             print("Exiting CryptoTracker...")
