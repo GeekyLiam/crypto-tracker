@@ -46,6 +46,7 @@ def coin_cur_selection():
 def coin_price(coin, currency):
     """
     Function for fetching cryptocurrency price using the Binance API.
+    Returns dictionary containing ticker symbol and price.
     """
 
     url = f"https://api.binance.com/api/v3/ticker/price?symbol={coin}{currency}"
@@ -54,7 +55,24 @@ def coin_price(coin, currency):
 
     return data
 
+def coin_amount_input(coin):
+    """
+    Function for coin amount input.
+    Returns coin amount.
+    """
+
+    if coin == "BTC":
+        amount = input(f"Please enter amount of Bitcoin: \n")
+    elif coin == "ETH":
+        amount = input(f"Please enter amount of Ethereum: \n")
+    
+    return amount
+
 def menu():
+    """
+    Function for main menu.
+    """
+
     print("Welcome to CryptoTracker!")
     print("Please choose an option from the menu:")
 
@@ -62,12 +80,13 @@ def menu():
 
     while menu_loop:
         print("\n1: View Coin Price.")
+        print("2: Simple Portfolio Calculator.")
         print("c: Clear Terminal.")
         print("q: Exit")
 
         choice = input("Enter your choice: \n")
 
-        if choice == "1":
+        if choice == "1": # View coin price
             coin_cur = coin_cur_selection()
             coin_data = coin_price(coin_cur[0], coin_cur[1])
             if coin_data["symbol"] == "BTCUSDT":
@@ -78,7 +97,15 @@ def menu():
                 print(f"ETH/USD price is ${float(coin_data['price']):.2f}.")
             elif coin_data["symbol"] == "ETHGBP":
                 print(f"ETH/GBP price is £{float(coin_data['price']):.2f}.")
-                
+
+        elif choice == "2": # Simple portfolio calculator
+            coin_cur = coin_cur_selection()
+            coin_amount = coin_amount_input(coin_cur[0])
+            coin_data = coin_price(coin_cur[0], coin_cur[1])
+
+            if coin_cur
+            print(f"")
+
         elif choice == "c" or choice =="C":
             print("Clearing terminal...")
             time.sleep(1)
@@ -92,6 +119,10 @@ def menu():
             quit()
 
 def main():
+    """
+    Main function.
+    """
+
     menu()
 
 if __name__ == '__main__':
