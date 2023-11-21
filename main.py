@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 
 def coin_price():
     
@@ -39,6 +40,7 @@ def menu():
 
         elif choice == "2":
             print("Exiting CryptoTracker...")
+            time.sleep(1)
             quit()
 
 def main():
