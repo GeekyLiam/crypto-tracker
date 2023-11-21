@@ -70,9 +70,10 @@ def menu():
         if choice == "1":
             coin_cur = coin_cur_selection()
             coin_data = coin_price(coin_cur[0], coin_cur[1])
-            if coin_data['symbol'] == "BTCUSDT":
+            if coin_data["symbol"] == "BTCUSDT":
                 print(f"BTC/USD price is {float(coin_data['price']):.2f}.")
-
+            elif coin_data["symbol"] == "BTCGBP":
+                print(f"BTC/GBP price is {float(coin_data['price']):.2f}.")
         elif choice == "c" or choice =="C":
             print("Clearing terminal...")
             time.sleep(1)
