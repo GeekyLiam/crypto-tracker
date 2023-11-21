@@ -42,7 +42,7 @@ def coin_cur_selection():
     coin_cur = (coin, currency)
     return coin_cur
 
-def coin_price():
+def coin_price(coin, currency):
     pass
 
 def menu():
@@ -59,7 +59,7 @@ def menu():
 
         if choice == "1":
             coin_cur = coin_cur_selection()
-            coin_price(coin_cur)
+            coin_price(coin_cur[0], coin_cur[1])
 
         elif choice == "2":
             print("Exiting CryptoTracker...")
