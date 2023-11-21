@@ -84,7 +84,7 @@ def menu():
         print("c: Clear Terminal.")
         print("q: Exit")
 
-        choice = input("Enter your choice: \n")
+        choice = input("\nEnter your choice: \n")
 
         if choice == "1": # View coin price
             coin_cur = coin_cur_selection()
