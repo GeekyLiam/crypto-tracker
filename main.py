@@ -68,7 +68,8 @@ def menu():
         if choice == "1":
             coin_cur = coin_cur_selection()
             coin_data = coin_price(coin_cur[0], coin_cur[1])
-            print(f"{coin_data['symbol']} price is {coin_data['price']}")
+            if coin_data['symbol'] == "BTCUSDT":
+                print(f"{coin_data['symbol']} price is {coin_data['price']}")
 
         elif choice == "2":
             print("Exiting CryptoTracker...")
