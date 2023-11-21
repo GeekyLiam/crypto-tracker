@@ -43,8 +43,15 @@ def coin_cur_selection():
     return coin_cur
 
 def coin_price(coin, currency):
+    """
+    Function for fetching cryptocurrency price using the Binance API.
+    """
+
     url = f"https://api.binance.com/api/v3/ticker/price?symbol={coin}{currency}"
-    print(url)
+    data = requests.get(url)
+    data = data.json()
+
+    return data
 
 def menu():
     print("Welcome to CryptoTracker!")
@@ -60,7 +67,8 @@ def menu():
 
         if choice == "1":
             coin_cur = coin_cur_selection()
-            coin_price(coin_cur[0], coin_cur[1])
+            coin_data = coin_price(coin_cur[0], coin_cur[1])
+            print(f"{coin_data['symbol']} price is {coin_data['price']}")
 
         elif choice == "2":
             print("Exiting CryptoTracker...")
