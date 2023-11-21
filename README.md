@@ -1,2 +1,2 @@
 # CryptoTracker
- Simple crypto price checker and portfolio tracker.
+ Simple python command line crypto price checker and portfolio tracker.
