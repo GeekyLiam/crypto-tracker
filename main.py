@@ -61,7 +61,7 @@ def menu():
     menu_loop = True
 
     while menu_loop:
-        print("1: View Coin Price.")
+        print("\n1: View Coin Price.")
         print("c: Clear Terminal.")
         print("q: Exit")
 
