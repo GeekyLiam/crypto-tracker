@@ -75,9 +75,10 @@ def menu():
             elif coin_data["symbol"] == "BTCGBP":
                 print(f"BTC/GBP price is £{float(coin_data['price']):.2f}.")
             elif coin_data["symbol"] == "ETHUSDT":
-                print(f"ETH/USD price is £{float(coin_data['price']):.2f}.")
+                print(f"ETH/USD price is ${float(coin_data['price']):.2f}.")
             elif coin_data["symbol"] == "ETHGBP":
                 print(f"ETH/GBP price is £{float(coin_data['price']):.2f}.")
+                
         elif choice == "c" or choice =="C":
             print("Clearing terminal...")
             time.sleep(1)
