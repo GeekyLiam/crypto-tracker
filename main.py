@@ -102,16 +102,16 @@ def menu():
             coin_cur = coin_cur_selection()
             coin_amount = coin_amount_input(coin_cur[0])
             coin_data = coin_price(coin_cur[0], coin_cur[1])
+            value = float(coin_data['price'])*float(coin_amount)
 
-            if coin_data["symbol"] == "BTCUSDT":
-                value = coin_data['price']*coin_amount
+            if coin_data["symbol"] == "BTCUSDT":        
                 print(f"The current value of {coin_amount} BTC is ${value:.2f}.")
             elif coin_data["symbol"] == "BTCGBP":
-                print(f"BTC/GBP price is £{float(coin_data['price']):.2f}.")
+                print(f"The current value of {coin_amount} BTC is £{value:.2f}.")
             elif coin_data["symbol"] == "ETHUSDT":
-                print(f"ETH/USD price is ${float(coin_data['price']):.2f}.")
+                print(f"The current value of {coin_amount} ETH is ${value:.2f}.")
             elif coin_data["symbol"] == "ETHGBP":
-                print(f"ETH/GBP price is £{float(coin_data['price']):.2f}.")
+                print(f"The current value of {coin_amount} ETH is £{value:.2f}.")
 
         elif choice == "c" or choice =="C":
             print("Clearing terminal...")
