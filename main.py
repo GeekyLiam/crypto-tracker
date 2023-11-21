@@ -2,12 +2,16 @@ import json
 import requests
 import time
 
-def coin_price():
+def coin_cur_selection():
+    """
+    Function for coin/currency selection. 
+    Returns tuple containing selected coin and currency.
+    """
     
     # Currently supported coins: BTC, ETH
     coin_loop = True
     while coin_loop:
-        coin = input.capitalize("Enter the coin ticker: \n")
+        coin = input("Enter the coin ticker: \n").upper()
         if coin == "BTC":
             print("Bitcoin selected.")
             coin_loop = False
@@ -15,12 +19,12 @@ def coin_price():
             print("Ethereum selected.")
             coin_loop = False
         else:
-            print("Coin not recognized. Please retry: \n")
+            print("Coin not recognized. Please retry.")
 
     # Currently supported currencies: USD, GBP
     cur_loop = True
     while cur_loop:
-        currency = input.capitalize("Enter the currency: \n")
+        currency = input("Enter the currency: \n").upper()
         if currency == "USD":
             currency = "USDT"
             print("USD selected.")
@@ -29,7 +33,13 @@ def coin_price():
             print("GBP selected.")
             cur_loop = False
         else:
-            print("Currency not recognized. Please retry: \n")
+            print("Currency not recognized. Please retry.")
+
+    coin_cur = (coin, currency)
+    return coin_cur
+
+def coin_price():
+    pass
 
 def menu():
     print("Welcome to CryptoTracker!")
@@ -44,7 +54,8 @@ def menu():
         choice = input("Enter your choice: \n")
 
         if choice == "1":
-            coin_price()
+            coin_cur = coin_cur_selection()
+            coin_price(coin_cur)
 
         elif choice == "2":
             print("Exiting CryptoTracker...")
