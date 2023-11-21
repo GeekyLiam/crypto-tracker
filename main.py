@@ -4,6 +4,7 @@ import time
 
 def coin_price():
     
+    # Currently supported coins: BTC, ETH
     coin_loop = True
     while coin_loop:
         coin = input.capitalize("Enter the coin ticker: \n")
@@ -16,12 +17,19 @@ def coin_price():
         else:
             print("Coin not recognized. Please retry: \n")
 
+    # Currently supported currencies: USD, GBP
     cur_loop = True
     while cur_loop:
         currency = input.capitalize("Enter the currency: \n")
-        if currency == USD:
+        if currency == "USD":
             currency = "USDT"
-            print("USD Selected.")
+            print("USD selected.")
+            cur_loop = False
+        elif currency == "GBP":
+            print("GBP selected.")
+            cur_loop = False
+        else:
+            print("Currency not recognized. Please retry: \n")
 
 def menu():
     print("Welcome to CryptoTracker!")
