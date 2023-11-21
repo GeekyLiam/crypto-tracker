@@ -61,9 +61,9 @@ def menu():
     menu_loop = True
 
     while menu_loop:
-        os.system('cls')
-        print("1. View Coin Price")
-        print("2. Exit")
+        print("1: View Coin Price.")
+        print("c: Clear Terminal.")
+        print("q: Exit")
 
         choice = input("Enter your choice: \n")
 
@@ -73,7 +73,12 @@ def menu():
             if coin_data['symbol'] == "BTCUSDT":
                 print(f"BTC/USD price is {float(coin_data['price']):.2f}.")
 
-        elif choice == "2":
+        elif choice == "c" or choice =="C":
+            print("Clearing terminal...")
+            time.sleep(1)
+            os.system('cls')
+
+        elif choice == "q" or choice == "Q":
             print("Exiting CryptoTracker...")
             time.sleep(1)
             quit()
